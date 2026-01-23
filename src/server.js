@@ -25,7 +25,7 @@ const startServer = async () => {
   await connectMongoDB();
 
   app.listen(PORT, () => {
-    console.log(`Server is running on https://nodejs-hw-2-7zkx.onrender.com`);
+    console.log(`Server is running on port ${PORT}`);
   });
 };
 
