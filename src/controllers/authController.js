@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import createHttpError from 'create-http-error';
+import createHttpError from 'http-errors';
 import User from '../models/user.js';
 import { Session } from '../models/session.js';
 import { createSession, setSessionCookies } from '../services/auth.js';
@@ -151,6 +151,7 @@ export const requestResetEmail = async (req, res, next) => {
 
   try {
     await sendEmail({
+      from: process.env.SMTP_FROM,
       to: user.email,
       subject: 'Password reset',
       html,

@@ -40,7 +40,7 @@ router.post(
 );
 
 router.post(
-  '/reset-password',
+  '/auth/reset-password',
   celebrate({ body: resetPasswordSchema }),
   resetPassword,
 );
